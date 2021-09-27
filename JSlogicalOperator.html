@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<body>
+
+<script>
+
+//FIRST METHOD//
+
+let login =prompt("Who's there?","");
+let userName = "Admin";
+let password = "TheMaster";
+
+if ( login == null || login == false ) {
+alert("Canceled");
+}
+else if ( login != userName ) {
+alert(`I don't know you`);
+}
+else {
+
+login = prompt("Password?"); 
+
+if ( login == password) {
+alert("Welcome Master");
+}
+else if ( login == null || login == false ) {
+alert("Canceled");
+}
+else {
+alert("Wrong Password");
+}
+};
+
+//SECOND METHOD//
+
+let login = prompt("Enter Username", "");
+
+
+if (login === "Admin") {
+
+let password = prompt("Enter Password","");
+
+if (password === "TheMaster") {
+alert("Welcome Master Fernando");
+}
+
+else if (password == null || password == false) {
+alert("Canceled");
+}
+
+else {
+alert("Wrong Password");
+}
+
+}
+
+else if ( login == null || login == false ) {
+alert("Canceled");
+}
+
+else {
+alert("I don't know you");
+};
+
+//END//
+
+</script>
+
+</body>
+</html>
