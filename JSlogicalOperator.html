@@ -66,5 +66,128 @@ alert("I don't know you");
 
 </script>
 
+<label for="weather">Select the weather type today: </label>
+<select id="weather">
+  <option value="">--Make a choice--</option>
+  <option value="sunny">Sunny</option>
+  <option value="rainy">Rainy</option>
+  <option value="snowing">Snowing</option>
+  <option value="overcast">Overcast</option>
+</select>
+
+<p></p>
+
+<script>
+
+let select = document.querySelector("select");
+let para = document.querySelector("p");
+
+//select.addEventListener("change", setWeather);  // It will run the function below
+
+function setWeather () {
+
+const choice = select.value;
+
+if (choice==="sunny"){
+    para.textContent ="Today is a Sunny Day.";
+}
+else if (choice==="rainy"){
+    para.textContent = "Today is a Rainy Day.";
+}
+else if (choice==="snowing"){
+    para.textContent = "Today is a Snowing Day.";
+}
+else if (choice==="overcast"){
+    para.textContent = "Today is a Overcast Day.";
+}
+else {
+    para.textContent = "";
+}
+}
+
+select.addEventListener("change", setWeather2);// It will run the function below
+
+function setWeather2 () {
+
+    const desicion = select.value;
+
+    switch(desicion) {
+        case "sunny":
+        para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+        break;
+
+        case "rainy":
+        para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+        break;
+
+        case "snowing":
+        para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+        break;
+
+        case "overcast":
+        para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+        break;
+
+        default:
+        para.textContent = "";    
+    }
+
+}
+
+
+</script>
+
+
+<script>
+    const select = document.querySelector('select');
+const list = document.querySelector('ul');
+const h1 = document.querySelector('h1');
+
+select.onchange = function() {
+  const choice = select.value;
+
+  // ADD CONDITIONAL HERE
+let days = 31;
+if (choice === "February") {
+days = 28
+} else if (choice === "April" || "June" || "September" || "November" ) {
+days = 30 
+}
+  createCalendar(days, choice);
+}
+
+function createCalendar(days, choice) {
+  list.innerHTML = '';
+  h1.textContent = choice;
+  for (let i = 1; i <= days; i++) {
+    const listItem = document.createElement('li');
+    listItem.textContent = i;
+    list.appendChild(listItem);
+  }
+}
+
+createCalendar(31,'January');
+</script>
+
+<script>
+    let message = (login == 'Employee') ? 'Hello' :
+              (login == 'Director') ? 'Greetings':
+              (login == '') ? 'No login':
+               '' ;
+
+let message;
+
+if (login == 'Employee') {
+  message = 'Hello';
+} else if (login == 'Director') {
+  message = 'Greetings';
+} else if (login == '') {
+  message = 'No login';
+} else {
+  message = '';
+}
+</script>
+
 </body>
 </html>
+
